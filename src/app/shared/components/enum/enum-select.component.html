@@ -1,0 +1,3 @@
+<nz-select [(ngModel)]="val" (ngModelChange)="valChange($event)" nzPlaceHolder="placeHolder" [nzDisabled]="disabled">
+  <nz-option *ngFor="let i of list" [nzValue]="i.value" [nzLabel]="i.label"></nz-option>
+</nz-select>

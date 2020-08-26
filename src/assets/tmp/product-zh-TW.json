@@ -1,0 +1,128 @@
+{
+  "categories": [
+    {
+      "name": "基礎産品",
+      "id": "basic",
+      "products": ["cdn", "live", "storage", "process", "scdn", "websocket"]
+    },
+    {
+      "name": "增值服務",
+      "id": "value-added",
+      "products": ["ssl", "sms", "audit", "ddos", "blockchain"]
+    },
+    {
+      "name": "解決方案",
+      "id": "solution",
+      "products": ["cross_platform", "short_video"]
+    }
+  ],
+  "products": {
+    "cdn": {
+      "name": "CDN",
+      "description": "CDN，有效解決了互聯網網絡擁塞問題，提升終端用戶訪問速度，增強網站的可用性，同時可大幅降低源站壓力。",
+      "link": "/service/cdn",
+      "document": "/",
+      "icon": "cloud",
+      "open": true
+    },
+    "live": {
+      "name": "直播雲",
+      "description": "直播為企業提供端到端的一站式直播解決方案，提供低延遲，高並發，可靈活配置的音視頻直播服務。",
+      "link": "/",
+      "document": "",
+      "icon": "youtube",
+      "open": false
+    },
+    "storage": {
+      "name": "雲存儲",
+      "description": "雲存儲，是麵嚮互聯網應用的對象存儲服務，可滿足大數據企業應用背景下的數據傳輸、處理、存儲、分發與容災需求。",
+      "link": "/",
+      "document": "",
+      "icon": "hdd",
+      "open": false
+    },
+    "process": {
+      "name": "雲處理",
+      "description": "雲處理，針對多媒體數據（圖片、音視頻）提供多樣靈活的多終端、多規格內容輸出加工服務。",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "scdn": {
+      "name": "安全加速 SCDN",
+      "abbr": "SCDN",
+      "description": "安全加速 SCDN，針對分佈在全球的多行業客戶，提供的 DDoS 防護和 CDN 加速組合式解決方案。",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "websocket": {
+      "name": "WebSocket",
+      "description": "WebSocket，通過多種優化措施，能夠有效降低延遲、提升效率，為用戶提供實時、穩定、安全的數據通訊服務。",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "ssl": {
+      "name": "SSL 證書服務",
+      "abbr": "SSL 證書",
+      "description": "SSL 證書服務，提供證書的申購、管理、部署等功能。流程簡單快捷，為用戶提供一站式 HTTPS 安全解決方案。",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "sms": {
+      "name": "短信服務",
+      "description": "短信服務，三網合一，提供企業級短信送達服務，業務提醒、驗證碼、營銷短信，秒級送達，送達率＞99%。",
+      "link": "/sms",
+      "document": "",
+      "icon": "cloud",
+      "open": true
+    },
+    "audit": {
+      "name": "內容識別服務",
+      "abbr": "內容識別",
+      "description": "內容識別服務，能實時處理圖片、點播、直播等內容，識別色情、廣告等信息，為用戶提供新型信息安全解決方案。",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "ddos": {
+      "name": "DDoS 高防 IP",
+      "description": "DDoS 高防 IP，針對易受 DDoS 攻擊的電商、遊戲等各類型客戶的高防服務，可保障源站業務穩定可靠運行。",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "blockchain": {
+      "name": "區塊鏈服務",
+      "description": "Blockchain 聚合 API 服務麵嚮開發者開放的區塊鏈聚合 API 服務。快速接入區塊鏈服務，輕鬆開發專屬 Dapp。",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "cross_platform": {
+      "name": "融合雲存儲",
+      "description": "融合雲存儲融合雲存儲融合雲存儲融合雲存儲融合雲存儲",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "short_video": {
+      "name": "短視頻",
+      "description": "短視頻短視頻短視頻短視頻短視頻短視頻短視頻短視頻短視頻",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    }
+  }
+}

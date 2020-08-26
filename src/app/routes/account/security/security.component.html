@@ -1,0 +1,50 @@
+<nz-skeleton *ngIf="!i"></nz-skeleton>
+<ng-container *ngIf="i">
+  <page-form tit="当前语言" [data]="i" type="custom" [custom]="customTpl">
+    <ng-template #customTpl>
+      <langs showLangText></langs>
+    </ng-template>
+    <p>这是一段描述</p>
+    <p>这是一段描述这是一段描述这是一段描述</p>
+  </page-form>
+  <page-form [tit]="pwdTit" type="btn" [data]="i" [btn]="pwdModal">
+    <ng-template #pwdTit>
+      登录密码
+      <i nz-icon nzType="check-circle"></i>
+    </ng-template>
+    <p>安全性高的密码可以使账号更安全。</p>
+    <p>设置一个包含字母，符号或数字中至少两项且长度超过 8 位的密码。</p>
+  </page-form>
+  <page-form [tit]="emailTit" type="btn" [data]="i" [btn]="emailModal">
+    <ng-template #emailTit>
+      邮箱验证
+      <i nz-icon nzType="close-circle"></i>
+    </ng-template>
+    <h3>您的绑定邮箱可用于</h3>
+    <span class="help-item help-item-inline ml0">安全管理，密码重置找回</span>
+    <span class="help-item help-item-inline">安全管理，密码重置找回</span>
+    <span class="help-item help-item-inline">安全管理，密码重置找回</span>
+  </page-form>
+  <page-form [tit]="mobileTit" type="btn" [data]="i" [btn]="mobileModal" (resultChange)="i = $event">
+    <ng-template #mobileTit>
+      手机验证
+      <i nz-icon nzType="close-circle"></i>
+    </ng-template>
+    <div sv-container="1" class="mb-md">
+      <sv label="您的手机">{{ i.mobile }}</sv>
+    </div>
+    <h3>您的绑定手机号可用于</h3>
+    <span class="help-item help-item-inline ml0">安全管理，密码重置找回</span>
+    <span class="help-item help-item-inline">安全管理，密码重置找回</span>
+    <span class="help-item help-item-inline">安全管理，密码重置找回</span>
+  </page-form>
+  <page-form [tit]="loginAuthTit" type="switch" [data]="i.loginAuth" (switchChange)="i.loginAuth = $event">
+    <ng-template #loginAuthTit>
+      登录验证
+      <nz-tag [nzColor]="i.loginAuth ? 'success' : ''">{{ i.loginAuth ? '' : '未' }}开启</nz-tag>
+    </ng-template>
+    <p>
+      功能开启以后，下次登录控制台时，除了输入用户名和密码，系统还会向注册手机号发送一个验证码进行认证，进一步保障账户的登录安全。
+    </p>
+  </page-form>
+</ng-container>

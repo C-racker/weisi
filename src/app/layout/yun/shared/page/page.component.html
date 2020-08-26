@@ -1,0 +1,58 @@
+<!-- <div *ngIf="_back && _back.title" class="container alain-yun__page-backbar">
+  <div *ngIf="_back.title" class="alain-yun__page-backbar-text" (click)="toBack()">{{ _back.title }}</div>
+</div> -->
+<div class="alain-yun__page-main">
+  <!-- <div *ngIf="showTit && (_tit || subTit || extra)" class="alain-yun__page-header">
+    <div class="alain-yun__page-tit">
+      <h1 *ngIf="_tit" class="alain-yun__page-tit-text">
+        <ng-container *nzStringTemplateOutlet="_tit">{{ _tit }}</ng-container>
+      </h1>
+      <div *ngIf="subTit" class="alain-yun__page-tit-sub">
+        <ng-container *nzStringTemplateOutlet="subTit">{{ subTit }}</ng-container>
+      </div>
+    </div>
+    <div *ngIf="extra" class="alain-yun__page-extra">
+      <ng-container *nzStringTemplateOutlet="extra">{{ extra }}</ng-container>
+    </div>
+  </div> -->
+  <!-- <ng-template [ngTemplateOutlet]="header"></ng-template> -->
+  <!-- <div *ngIf="_showNav && (navTpl || navData.length > 0)" class="alain-yun__page-nav">
+    <ng-container *ngIf="!navTpl; else navTpl">
+      <ul class="alain-yun__page-nav-wrap">
+        <li *ngFor="let i of navData" class="alain-yun__page-nav-item"
+          [linkActive]="{ link: i.url, cls: 'alain-yun__page-nav-active' }"
+          [class.alain-yun__page-nav-disabled]="i.disabled" [class.alain-yun__page-nav-sub]="i._subText">
+          <a (click)="to(i)" class="alain-yun__page-nav-link" nz-dropdown
+            [nzDropdownMenu]="i.children.length > 0 ? menu : null">
+            {{ i._subText || i.title }}
+            <span *ngIf="i._subText" class="alain-yun__page-nav-subtext">{{ i.title }}</span>
+            <nz-tag *ngIf="i.tag" [nzColor]="i.tag.color || 'red'">{{ i.tag.text }}</nz-tag>
+            <i *ngIf="i.children.length > 0" nz-icon nzType="down"></i>
+          </a>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-item *ngFor="let c of i.children" [nzDisabled]="c.disabled" [nzSelected]="c.selected"
+                (click)="to(c)">
+                {{ c.title }}
+                <nz-tag *ngIf="c.tag" [nzColor]="c.tag.color || 'red'">{{ c.tag.text }}</nz-tag>
+              </li>
+            </ul>
+          </nz-dropdown-menu>
+        </li>
+      </ul>
+    </ng-container>
+  </div> -->
+  <div class="alain-yun__page-body">
+    <ng-content></ng-content>
+  </div>
+
+</div>
+<div class="footer" style="display: flex; flex-direction: column; align-items: center; margin-top: 30px;">
+  <p style="margin-bottom: -6px;">Copyright © 2013 · 西安维思自动化工程有限公司　陕ICP备12010164号-3　地址：西安市未央区草滩六路大普工业园3栋4层</p>
+  <p style="margin-bottom: -6px;">电话: 029-89135860 · 传真: 029-85332129 710061 技术支持：西安维思</p>
+  <div style="display: flex; ">
+    <img src="http://www.weisiauto.com/uploadfile/2017/0206/20170206041211387.png" alt=""
+      style="width: 24px; height: 24px; margin-right: 5px;">
+    <p>陕公网安备 61019102000112号</p>
+  </div>
+</div>

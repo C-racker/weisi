@@ -1,0 +1,16 @@
+<button nz-button [disabled]="disabled" nz-dropdown [nzDropdownMenu]="openMenu" nzTrigger="click" [(nzVisible)]="visible">
+  {{ text }}
+  <i nz-icon [nzType]="visible ? 'up' : 'down'"></i>
+</button>
+<nz-dropdown-menu #openMenu="nzDropdownMenu">
+  <div class="ant-select-dropdown p-md">
+    <a *ngIf="all" (click)="choose('')">全部地区</a>
+    <ul class="list-unstyled mt-md">
+      <li *ngFor="let g of data" class="mb-md">
+        <strong class="font-weight-normal">{{ g.name }}</strong>
+        <a *ngFor="let i of g.list" (click)="choose(i)" class="pl-md">{{ i }}</a>
+      </li>
+    </ul>
+    <a *ngIf="global" (click)="choose('海外')">海外地区</a>
+  </div>
+</nz-dropdown-menu>

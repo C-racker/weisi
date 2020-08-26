@@ -1,0 +1,53 @@
+<div class="box">
+  <div class="left">
+    <h3>服务售后
+    </h3>
+
+    <h3>联系我们
+    </h3>
+    <div class=" tel">
+      <p>西安维思自动化工程有限公司</p>
+      <p>西安市未央区草滩六路大普工业园3栋4层</p>
+      <p>陕西 · 西安 · 710061</p>
+      <p>电话: 029-89135860</p>
+      <p>传真: 029-85332129</p>
+      <p>邮箱：waysauto@foxmail.com</p>
+
+    </div>
+  </div>
+  <div class=" line">
+  </div>
+  <div class="right">
+    <div class="content">
+      <p style="font-size: 24px;border-bottom: 1px solid #ccc;">服务售后</p>
+      <div class="detail">
+        <div class="company">
+          <p>西安维思自动化工程有限公司</p>
+          <ul class="message">
+            <li>网址: www.weisiauto.com</li>
+            <li>邮编: 710061</li>
+            <li>邮箱: waysauto@foxmail.com</li>
+            <li>电话: 029-89135860</li>
+            <li>服务热线: 400-029-9162</li>
+            <li>传真: 029-85332129</li>
+            <li>地址: 西安市未央区草滩六路大普工业园3栋4层</li>
+            <li>
+              微信: <img src="http://www.weisiauto.com/uploadfile/2017/0324/20170324051814590.jpg" alt=""
+                style="width: 100px;">
+            </li>
+          </ul>
+        </div>
+        <div class="address" *ngFor="let item of addrs">
+          <p>{{item.name}}</p>
+          <ul>
+            <li>{{item.addr}}</li>
+            <li>{{item.link}}</li>
+            <li>{{item.phone}}</li>
+            <li>{{item.tel}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 每个内容都有自己的id值 , 当设备分类的id等于之前的id  显示相应的内容 -->

@@ -1,0 +1,10 @@
+<topbar>
+  <topbar-main-menus></topbar-main-menus>
+  <topbar-main-widgets></topbar-main-widgets>
+</topbar>
+<div class="brand-page-loading" [hidden]="!isFetching">
+  <!-- <nz-spin nzSpinning></nz-spin> -->
+</div>
+<div class="alain-yun__body" *ngIf="!isFetching">
+  <router-outlet></router-outlet>
+</div>

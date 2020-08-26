@@ -1,0 +1,12 @@
+<page tit="操作日志">
+  <div class="flex-center-between">
+    <nz-select [(ngModel)]="params.type" (ngModelChange)="st.reset(params)">
+      <nz-option *ngFor="let t of types" [nzValue]="t" [nzLabel]="t"></nz-option>
+    </nz-select>
+    <div class="d-flex align-items-center">
+      <range-picker [(ngModel)]="params.start" [(ngModelEnd)]="params.end" (ngModelEndChange)="st.reset(params)"></range-picker>
+      <i nz-tooltip nzTooltipTitle="系统会只保留近3个月内的数据" nz-icon nzType="question-circle" nzTheme="fill" class="help-icon"></i>
+    </div>
+  </div>
+  <st #st [data]="url" [columns]="columns" [req]="{ params: params }" class="mt-md"></st>
+</page>

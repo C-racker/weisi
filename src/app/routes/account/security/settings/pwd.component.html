@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <div class="modal-title">修改登录密码</div>
+</div>
+<form *ngIf="i" nz-form #f="ngForm" (ngSubmit)="save()" [formGroup]="form">
+  <div se-container col="1" labelWidth="100">
+    <se label="当前密码" error="当前密码不能为空">
+      <input nz-input type="password" required formControlName="old" />
+    </se>
+    <se label="新密码" error="密码不能为空，且必须是6位以上">
+      <input nz-input type="password" required formControlName="pwd" />
+    </se>
+    <se label="确认新密码" [error]="{ required: '确认新密码不能为空', notEqual: '两次输入的密码不一致' }">
+      <input nz-input type="password" required formControlName="repwd" />
+    </se>
+  </div>
+  <div class="modal-footer">
+    <button nz-button type="button" (click)="close()">取消</button>
+    <button nz-button type="submit" nzType="primary" [disabled]="f.invalid" [nzLoading]="loading">保存</button>
+  </div>
+</form>

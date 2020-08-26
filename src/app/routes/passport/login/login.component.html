@@ -1,0 +1,41 @@
+<div class="banner">
+  <h1>Work with us</h1>
+  <p class="max-width-lg">
+    Our researchers are embedded in teams across computer science, to discover, invent, and build at the largest scale.
+  </p>
+</div>
+<div class="box">
+  <form nz-form #f="ngForm" nzLayout="vertical" [formGroup]="form" (ngSubmit)="submit()" role="form">
+    <nz-alert *ngIf="error" [nzType]="'error'" [nzMessage]="error" [nzShowIcon]="true" class="mb-lg"></nz-alert>
+    <div se-container nzLayout="vertical">
+      <se [label]="'passport.login.name' | i18n" [error]="{ required: 'Required', pattern: 'Muse be: admin or user' }">
+        <input formControlName="userName" nz-input nzSize="large" autocomplete="off" placeholder="admin or user" />
+      </se>
+      <se [label]="'passport.login.pwd' | i18n" [error]="{ required: 'Required', pattern: 'Muse be: ng-alain.com' }">
+        <input
+          nz-input
+          type="password"
+          nzSize="large"
+          autocomplete="off"
+          formControlName="password"
+          placeholder="password: ng-alain.com"
+        />
+      </se>
+      <button
+        nz-button
+        nzType="primary"
+        nzSize="large"
+        nzBlock
+        type="submit"
+        [disabled]="f.invalid"
+        [nzLoading]="loading"
+      >
+        {{ 'passport.login.btn' | i18n }}
+      </button>
+    </div>
+  </form>
+  <div class="mt-lg d-flex justify-content-between">
+    <a routerLink="/passport/forget">{{ 'passport.login.forget' | i18n }}</a>
+    <a routerLink="/passport/register">{{ 'passport.login.register' | i18n }}</a>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<page>
+  <h3>授权 Token</h3>
+  <nz-card>
+    <p>
+      ID：<span class="brand-color">{{ i.id }}</span>
+    </p>
+    <div>
+      Token：<span class="brand-color">{{ i.token }}</span>
+    </div>
+  </nz-card>
+  <h3 class="mt-lg">IP 白名单</h3>
+  <textarea nz-input [(ngModel)]="i.ips" [nzAutosize]="{ minRows: 3 }" style="max-width: 300px;"></textarea>
+  <div class="my-md">
+    <button nz-button nzType="primary">设置</button>
+  </div>
+  <div class="help-item">描述一描述一描述一描述一描述一</div>
+  <div class="help-item">描述一描述一描述一描述一描述一</div>
+</page>

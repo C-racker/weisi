@@ -1,0 +1,51 @@
+<ng-template #render let-ls>
+  <ng-container *ngFor="let i of ls">
+    <!-- <div *ngIf="i.children.length === 0" class="alain-yun__topbar-item" (click)="to(i)" [linkActive]="i.router"
+      [class.alain-yun__topbar-item-disabled]="i.disabled">
+      <span class="alain-yun__topbar-item-btn">
+        <span>{{ i.text }}</span>
+      </span>
+    </div> -->
+    <div *ngIf="i.children.length > 0" class="alain-yun__topbar-item" topbar-dropdown>
+      <!-- <span class="alain-yun__topbar-item-btn">
+        <span>{{ i.text }}</span>
+        <i nz-icon nzType="caret-down" class="alain-yun__topbar-dd-arrow"></i>
+      </span> -->
+      <!-- <div class="alain-yun__topbar-dd-menu">
+        <a *ngFor="let c of i.children" (click)="to(i)" class="alain-yun__topbar-dd-item">
+          <i *ngIf="c.icon" nz-icon [nzType]="c.icon"></i>{{ i.text }}
+        </a>
+      </div> -->
+    </div>
+  </ng-container>
+</ng-template>
+<topbar>
+  <div class="alain-yun__topbar-menus">
+    <!-- <ng-template [ngTemplateOutlet]="render" [ngTemplateOutletContext]="{ $implicit: optinos.leftNavs }" }>
+    </ng-template> -->
+  </div>
+  <div class="alain-yun__topbar-widget">
+    <!-- <ng-template [ngTemplateOutlet]="render" [ngTemplateOutletContext]="{ $implicit: optinos.right.navs }" }>
+    </ng-template>
+    <div *ngIf="optinos.right.home" class="alain-yun__topbar-item">
+      <a routerLink="/" class="alain-yun__topbar-item-btn">
+        {{ 'yun.topbar.dashboard-home' | i18n }}
+      </a>
+    </div> -->
+    <!-- <div *ngIf="optinos.right.user" class="alain-yun__topbar-item" topbar-dropdown>
+      <span class="alain-yun__topbar-item-btn">
+        {{ name }}
+        <i nz-icon nzType="caret-down" class="alain-yun__topbar-dd-arrow"></i>
+      </span>
+      <div class="alain-yun__topbar-dd-menu">
+        <a routerLink="/account" class="alain-yun__topbar-dd-item"> <i nz-icon nzType="logout"></i>账户管理 </a>
+        <span class="alain-yun__topbar-dd-line"></span>
+        <a (click)="logout()" class="alain-yun__topbar-dd-item">
+          <i nz-icon nzType="logout"></i>
+          {{ 'yun.topbar.logout' | i18n }}
+        </a>
+      </div>
+    </div> -->
+  </div>
+</topbar>
+<router-outlet></router-outlet>

@@ -1,0 +1,49 @@
+<h3>工单支持</h3>
+<div nz-row nzGutter="128">
+  <div nz-col nzSpan="16">
+    <p>
+      欢迎您提交工单，提交后我们会尽快为您解决，感谢您的支持！<br />想了解工单处理进展，可以前往查看
+      <a routerLink="/">已提交工单</a>
+    </p>
+    <form nz-form #f="ngForm" (ngSubmit)="submit()" role="form" se-container size="compact" labelWidth="100" col="1">
+      <se label="标题" col="2" required>
+        <input nz-input [(ngModel)]="i.title" name="title" required maxlength="100" />
+      </se>
+      <se label="问题类型" col="2" required>
+        <nz-select [(ngModel)]="i.type" name="type">
+          <nz-option nzLabel="帐号与费用" nzValue="帐号与费用"></nz-option>
+          <nz-option nzLabel="控制台服务配置" nzValue="控制台服务配置"></nz-option>
+          <nz-option nzLabel="节点与文件访问" nzValue="节点与文件访问"></nz-option>
+          <nz-option nzLabel="文件存储与管理" nzValue="文件存储与管理"></nz-option>
+          <nz-option nzLabel="反馈与建议" nzValue="反馈与建议"></nz-option>
+          <nz-option nzLabel="其他问题" nzValue="其他问题"></nz-option>
+        </nz-select>
+      </se>
+      <se label="问题描述" required>
+        <editor [(ngModel)]="i.content" name="content" mode="simple" required [modules]="modules"></editor>
+      </se>
+      <se>
+        <div class="flex-center-between">
+          <nz-upload nzAction="/yun/attachment" (nzChange)="changeAttachment($event)" [nzShowUploadList]="false">
+            <button nz-button type="button">上传附件</button>
+          </nz-upload>
+          <button nz-button nzType="primary" type="submit" [disabled]="f.invalid" [nzLoading]="loading">提交</button>
+        </div>
+      </se>
+      <se *ngIf="i.attachments.length > 0">
+        <nz-tag *ngFor="let a of i.attachments; let idx = index" nzMode="closeable" (nzOnClose)="removeAttachment(idx)">
+          {{ a.name }}
+        </nz-tag>
+      </se>
+    </form>
+  </div>
+  <div nz-col nzSpan="8" class="wo-questions">
+    <h3>常见问题</h3>
+    <nz-input-group [nzSuffix]="searchTpl" class="width-sm">
+      <ng-template #searchTpl>
+        <i nz-icon nzType="search" (click)="search()"></i>
+      </ng-template>
+      <input type="text" nz-input [(ngModel)]="q" placeholder="搜索问题，输入后回车" (keyup.enter)="search()" />
+    </nz-input-group>
+  </div>
+</div>

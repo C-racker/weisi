@@ -1,0 +1,198 @@
+@alain-yun-topbar-prefix: ~'@{alain-yun-prefix}__topbar';
+
+@{alain-yun-topbar-prefix} {
+  display: block;
+  margin-bottom: @alain-yun-topbar-margin-bottom;
+  font-size: 12px;
+  background: @alain-yun-topbar-bg;
+  &-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: @alain-yun-topbar-height;
+  }
+  &-main {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+  }
+  &-menus {
+    display: flex;
+    align-items: center;
+  }
+  &-logo {
+    margin-right: 16px;
+    > img {
+      height: @alain-yun-topbar-logo-img-height;
+    }
+  }
+  &-widget {
+    display: flex;
+    align-items: center;
+  }
+  &-item {
+    position: relative;
+    &-btn {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 70px;
+      height: @alain-yun-topbar-height;
+      padding: 0 16px;
+      color: @alain-yun-topbar-btn-color;
+      text-decoration: none;
+      cursor: pointer;
+      &-active,
+      &:hover {
+        color: @alain-yun-topbar-btn-color;
+        background-color: @alain-yun-topbar-btn-hover-color;
+      }
+    }
+    &-icon {
+      .anticon {
+        font-size: 18px;
+      }
+    }
+    &-num {
+      position: absolute;
+      top: -6px;
+      z-index: 9;
+      margin-top: 0;
+      margin-left: -3px;
+      padding: 2px 4px;
+      color: #fff;
+      font-size: 12px;
+      font-style: normal;
+      line-height: 1;
+      white-space: nowrap;
+      background: #f54743;
+      border-radius: 5px;
+    }
+    &-disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+  &-pc {
+    padding: 8px 16px;
+    &-name {
+      margin: 8px 0;
+      color: @alain-yun-topbar-btn-color;
+      font-size: 14px;
+    }
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      width: 480px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    @{alain-yun-topbar-prefix}-dd {
+      &-item {
+        width: 120px;
+        overflow: hidden;
+        &-disabled {
+          opacity: 0.6;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+  &-dd {
+    @{alain-yun-topbar-prefix}-item-btn {
+      color: @alain-yun-topbar-btn-color;
+    }
+    &-arrow {
+      padding-left: 4px;
+      font-size: 12px;
+      transition: transform 0.5s;
+    }
+    &-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: @alain-yun-zindex + 1;
+      min-width: 100%;
+      margin: 0;
+      color: @alain-yun-topbar-btn-color;
+      white-space: nowrap;
+      list-style: none;
+      background-color: @alain-yun-topbar-btn-hover-color;
+      background-clip: padding-box;
+      border: none;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.15s, visibility 0s 0.15s;
+    }
+    &-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-width: 120px;
+      height: @alain-yun-topbar-dd-item-height;
+      padding: @alain-yun-topbar-dd-item-padding;
+      color: @alain-yun-topbar-btn-color;
+      line-height: @alain-yun-topbar-dd-item-height;
+      white-space: nowrap;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.15s;
+      &:hover {
+        color: #fff;
+        background-color: @alain-yun-topbar-dd-item-hover-color;
+      }
+      .anticon {
+        padding-right: 8px;
+        font-size: 16px;
+      }
+      &-hot {
+        &::after {
+          position: relative;
+          top: -10px;
+          left: 2px;
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          background-color: #db3434;
+          border-radius: 3px;
+          content: '';
+        }
+      }
+    }
+    &-open {
+      background-color: @alain-yun-topbar-btn-hover-color;
+
+      @{alain-yun-topbar-prefix}-dd {
+        &-menu {
+          visibility: visible;
+          opacity: 1;
+        }
+        &-arrow {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    &-left {
+      @{alain-yun-topbar-prefix}-dd-menu {
+        right: auto;
+        left: 0;
+      }
+    }
+    &-line {
+      display: block;
+      height: 1px;
+      margin: 4px 0;
+      background-color: @alain-yun-topbar-bg;
+    }
+  }
+  @media only screen and (max-width: @mobile-max) {
+    margin-bottom: 16px;
+    &-wrap {
+      margin: 0 8px;
+    }
+  }
+}

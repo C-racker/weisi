@@ -1,0 +1,28 @@
+<div class="modal-header">
+  <div class="modal-title">手机验证</div>
+</div>
+<form *ngIf="i" nz-form #f="ngForm" (ngSubmit)="save()">
+  <p>我们会保护您的隐私，避免手机信息泄露</p>
+  <div se-container col="1" labelWidth="150">
+    <se label="当前手机号码">{{ i.mobile }}</se>
+    <se label="新手机号码" error="新手机号码不能为空">
+      <input nz-input [(ngModel)]="data.mobile" name="mobile" required />
+    </se>
+    <se label="验证码" error="当前密码不能空">
+      <vcode [mobile]="data.mobile">
+        <input [(ngModel)]="data.code" nzSize="large" name="mobile" nz-input autocomplete="off" placeholder="输入验证码" />
+      </vcode>
+    </se>
+    <se label="当前密码" error="当前密码不能空">
+      <input nz-input type="password" [(ngModel)]="data.pwd" name="pwd" required />
+    </se>
+    <se>
+      <div class="help-item">目前仅支持中国大陆地区的手机号验证，禁止使用虚拟运营商号码</div>
+      <div class="help-item">重试后仍然无法收到短信，可以联系客服：xxxxxxxx</div>
+    </se>
+  </div>
+  <div class="modal-footer">
+    <button nz-button type="button" (click)="close()">取消</button>
+    <button nz-button type="submit" nzType="primary" [disabled]="f.invalid" [nzLoading]="loading">保存</button>
+  </div>
+</form>

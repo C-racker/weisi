@@ -1,0 +1,58 @@
+{
+  "app": {
+    "name": "Ng Alain Yun",
+    "description": "Ng-zorro admin panel front-end framework"
+  },
+  "user": {
+    "name": "Admin",
+    "avatar": "./assets/tmp/img/avatar.jpg",
+    "email": "cipchk@qq.com"
+  },
+  "enum": {
+    "status": {
+      "normal": {
+        "name": "服务中",
+        "color": "success"
+      },
+      "test": {
+        "name": "测试中",
+        "color": "error"
+      },
+      "closed": {
+        "name": "已关闭",
+        "color": "error"
+      }
+    },
+    "time": {
+      "second": { "name": "秒" },
+      "minute": { "name": "分钟" },
+      "hour": { "name": "小时" },
+      "day": { "name": "天" }
+    },
+    "cdnType": {
+      "picture": {
+        "name": "网页图片"
+      },
+      "download": {
+        "name": "文件下载"
+      },
+      "vod": {
+        "name": "音视频点播"
+      },
+      "cdn": {
+        "name": "全站加速"
+      }
+    },
+    "cdnProtocol": {
+      "http": {
+        "name": "HTTP"
+      },
+      "https": {
+        "name": "HTTPS"
+      },
+      "follow": {
+        "name": "协议跟随"
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "categories": [
+    {
+      "name": "基础产品",
+      "id": "basic",
+      "products": ["cdn", "live", "storage", "process", "scdn", "websocket"]
+    },
+    {
+      "name": "增值服务",
+      "id": "value-added",
+      "products": ["ssl", "sms", "audit", "ddos", "blockchain"]
+    },
+    {
+      "name": "解决方案",
+      "id": "solution",
+      "products": ["cross_platform", "short_video"]
+    }
+  ],
+  "products": {
+    "cdn": {
+      "name": "CDN",
+      "description": "CDN，有效解决了互联网网络拥塞问题，提升终端用户访问速度，增强网站的可用性，同时可大幅降低源站压力。",
+      "link": "/service/cdn",
+      "document": "/",
+      "icon": "cloud",
+      "open": true
+    },
+    "live": {
+      "name": "直播云",
+      "description": "直播为企业提供端到端的一站式直播解决方案，提供低延迟，高并发，可灵活配置的音视频直播服务。",
+      "link": "/",
+      "document": "",
+      "icon": "youtube",
+      "open": false
+    },
+    "storage": {
+      "name": "云存储",
+      "description": "云存储，是面向互联网应用的对象存储服务，可满足大数据企业应用背景下的数据传输、处理、存储、分发与容灾需求。",
+      "link": "/",
+      "document": "",
+      "icon": "hdd",
+      "open": false
+    },
+    "process": {
+      "name": "云处理",
+      "description": "云处理，针对多媒体数据（图片、音视频）提供多样灵活的多终端、多规格内容输出加工服务。",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "scdn": {
+      "name": "安全加速 SCDN",
+      "abbr": "SCDN",
+      "description": "安全加速 SCDN，针对分布在全球的多行业客户，提供的 DDoS 防护和 CDN 加速组合式解决方案。",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "websocket": {
+      "name": "WebSocket",
+      "description": "WebSocket，通过多种优化措施，能够有效降低延迟、提升效率，为用户提供实时、稳定、安全的数据通讯服务。",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "ssl": {
+      "name": "SSL 证书服务",
+      "abbr": "SSL 证书",
+      "description": "SSL 证书服务，提供证书的申购、管理、部署等功能。流程简单快捷，为用户提供一站式 HTTPS 安全解决方案。",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "sms": {
+      "name": "短信服务",
+      "description": "短信服务，三网合一，提供企业级短信送达服务，业务提醒、验证码、营销短信，秒级送达，送达率＞99%。",
+      "link": "/sms",
+      "document": "",
+      "icon": "cloud",
+      "open": true
+    },
+    "audit": {
+      "name": "内容识别服务",
+      "abbr": "内容识别",
+      "description": "内容识别服务，能实时处理图片、点播、直播等内容，识别色情、广告等信息，为用户提供新型信息安全解决方案。",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "ddos": {
+      "name": "DDoS 高防 IP",
+      "description": "DDoS 高防 IP，针对易受 DDoS 攻击的电商、游戏等各类型客户的高防服务，可保障源站业务稳定可靠运行。",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "blockchain": {
+      "name": "区块链服务",
+      "description": "Blockchain 聚合 API 服务面向开发者开放的区块链聚合 API 服务。快速接入区块链服务，轻松开发专属 Dapp。",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "cross_platform": {
+      "name": "融合云存储",
+      "description": "融合云存储融合云存储融合云存储融合云存储融合云存储",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    },
+    "short_video": {
+      "name": "短视频",
+      "description": "短视频短视频短视频短视频短视频短视频短视频短视频短视频",
+      "link": "/",
+      "document": "",
+      "icon": "cloud",
+      "open": false
+    }
+  }
+}

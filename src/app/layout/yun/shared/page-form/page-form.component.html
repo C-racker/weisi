@@ -1,0 +1,25 @@
+<!-- <h2 class="alain-yun__pageform-tit">
+  <ng-container *nzStringTemplateOutlet="tit">{{ tit }}</ng-container>
+</h2>
+<ng-template #con>
+  <ng-content></ng-content>
+</ng-template>
+<div *ngIf="type" class="alain-yun__pageform-main">
+  <div class="alain-yun__pageform-con">
+    <ng-template [ngTemplateOutlet]="con"></ng-template>
+  </div>
+  <div class="alain-yun__pageform-btn">
+    <ng-container [ngSwitch]="type">
+      <button *ngSwitchCase="'btn'" nz-button nzType="primary" (click)="open()">{{ _btn.btn }}</button>
+      <nz-switch *ngSwitchCase="'switch'" [(ngModel)]="data" (ngModelChange)="clickSwitch($event)"
+        [nzDisabled]="loading"></nz-switch>
+    </ng-container>
+    <ng-content select=".modal"></ng-content>
+    <ng-content select=".drawer"></ng-content>
+    <ng-template [ngTemplateOutlet]="custom"></ng-template>
+  </div>
+</div>
+<div *ngIf="!type" class="alain-yun__pageform-con">
+  <ng-template [ngTemplateOutlet]="con"></ng-template>
+</div>
+<ng-content select="quick-help"></ng-content> -->

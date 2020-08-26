@@ -1,0 +1,7 @@
+<textarea
+  nz-input
+  [(ngModel)]="value"
+  (ngModelChange)="valChange($event)"
+  [nzAutosize]="{ minRows: 3, maxRows: 8 }"
+  [attr.placeholder]="placeholder"
+></textarea>

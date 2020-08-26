@@ -1,0 +1,121 @@
+<div class="box choose-box" *ngIf="showType === 'choose'">
+  <h1 class="tit">{{ 'passport.register.choose' | i18n }}</h1>
+  <div class="choose-wrap">
+    <div class="choose">
+      <div class="choose-icon"><i nz-icon nzType="user"></i></div>
+      <button nz-button nzType="primary" (click)="chooseType('personal')">申请个人账号</button>
+    </div>
+    <div class="choose">
+      <div class="choose-icon"><i nz-icon nzType="team"></i></div>
+      <button nz-button nzType="primary" (click)="chooseType('company')">申请企业账号</button>
+    </div>
+  </div>
+  <p class="mb-lg">
+    个人账号可以更改为企业账号，但企业账号不能更改为个人账号。已有账号，<a routerLink="/passport/login">立即登录</a>。
+  </p>
+</div>
+<div class="box form" *ngIf="showType === 'form'">
+  <nz-steps [nzCurrent]="formStep">
+    <nz-step nzTitle="注册" nzIcon="user"></nz-step>
+    <nz-step nzTitle="手机" nzIcon="mobile"></nz-step>
+    <nz-step nzTitle="完成" nzIcon="check-circle"></nz-step>
+  </nz-steps>
+  <ng-container [ngSwitch]="formStep">
+    <ng-container *ngSwitchCase="0">
+      <h1 class="tit my-md">注册{{ typeName }}账号</h1>
+      <form nz-form #namef="ngForm" nzLayout="vertical" [formGroup]="nameForm" (ngSubmit)="saveName()" role="form">
+        <div se-container nzLayout="vertical">
+          <se error="请输入您的{{ typeName }}账号">
+            <input
+              formControlName="username"
+              nz-input
+              nzSize="large"
+              autocomplete="off"
+              placeholder="请输入您的{{ typeName }}账号"
+            />
+          </se>
+          <se error="请输入邮箱地址">
+            <input formControlName="email" nz-input nzSize="large" autocomplete="off" placeholder="请输入邮箱地址" />
+          </se>
+          <se error="密码支持 8 - 20 位的字母、数字和英文符号">
+            <input
+              nz-input
+              type="password"
+              nzSize="large"
+              autocomplete="off"
+              formControlName="password"
+              placeholder="设置 8 - 20 位的新密码"
+            />
+          </se>
+          <se *ngIf="type === 'company'" error="企业名称仅支持输入全中文或全英文">
+            <input formControlName="ent" nz-input nzSize="large" autocomplete="off" placeholder="请输入您的企业名称" />
+          </se>
+          <button
+            nz-button
+            nzType="primary"
+            nzSize="large"
+            nzBlock
+            type="submit"
+            [disabled]="namef.invalid"
+            [nzLoading]="loading"
+          >
+            下一步
+          </button>
+        </div>
+        <div class="my-lg d-flex justify-content-between">
+          <div>请您仔细阅读并同意遵守<a>《服务条款》</a></div>
+          <a (click)="showType = 'choose'">返回</a>
+        </div>
+      </form>
+    </ng-container>
+    <ng-container *ngSwitchCase="1">
+      <h1 class="tit my-md">请验证您的手机号码</h1>
+      <form nz-form #mobilef="ngForm" nzLayout="vertical" [formGroup]="mobileForm" (ngSubmit)="save()" role="form">
+        <div se-container nzLayout="vertical">
+          <se error="请输入您的姓名">
+            <input
+              formControlName="real_name"
+              nz-input
+              nzSize="large"
+              autocomplete="off"
+              placeholder="请输入您的姓名"
+            />
+          </se>
+          <se error="请输入正确的手机号，且不可使用虚拟手机号码">
+            <input formControlName="mobile" nz-input nzSize="large" autocomplete="off" placeholder="请输入手机号码" />
+          </se>
+          <se *ngIf="validMobile" error="输入验证码">
+            <vcode [mobile]="mobile">
+              <input formControlName="code" nz-input nzSize="large" autocomplete="off" placeholder="输入验证码" />
+            </vcode>
+          </se>
+          <button
+            nz-button
+            nzType="primary"
+            nzSize="large"
+            nzBlock
+            type="submit"
+            [disabled]="mobilef.invalid"
+            [nzLoading]="loading"
+          >
+            提交注册
+          </button>
+        </div>
+        <div class="my-lg d-flex justify-content-between">
+          <div>请您仔细阅读并同意遵守<a>《服务条款》</a></div>
+          <a (click)="formStep = 0">返回</a>
+        </div>
+      </form>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+      <result
+        class="mt-lg"
+        type="success"
+        [title]="'提交成功'"
+        description="提交结果页用于反馈一系列操作任务的处理结果，如果仅是简单操作，使用 Message 全局提示反馈即可。本文字区域可以展示简单的补充说明，如果有类似展示x“单据”的需求，下面这个灰色区域可以呈现比较复杂的内容。"
+      >
+        <button nz-button nzType="dashed" routerLink="/passport">立即登录</button>
+      </result>
+    </ng-container>
+  </ng-container>
+</div>

@@ -1,0 +1,50 @@
+@quick-help-prefix: ~'.quick-help';
+
+@{quick-help-prefix} {
+  display: block;
+  width: 100%;
+
+  &-btn {
+    text-align: right;
+    > span {
+      display: inline-flex;
+      align-items: center;
+      color: @brand-color;
+      cursor: pointer;
+    }
+  }
+
+  &-body {
+    display: none;
+    margin-top: 12px;
+    background-color: @quick-help-body-bg;
+  }
+
+  &-con {
+    padding: 24px;
+    > p,
+    > ol,
+    > ul {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .anticon {
+    transition: all 0.3s;
+  }
+
+  &-open {
+    @{quick-help-prefix} {
+      &-body {
+        display: block;
+      }
+    }
+
+    .anticon {
+      margin-top: 2px;
+      transform: rotate(90deg);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<div class="container">
+  <div *ngIf="type !== null" class="content">
+    <ng-container [ngSwitch]="type">
+      <helper-bar-support *ngSwitchCase="'support'"></helper-bar-support>
+      <helper-bar-refer *ngSwitchCase="'refer'"></helper-bar-refer>
+      <helper-bar-ftp *ngSwitchCase="'ftp'"></helper-bar-ftp>
+      <helper-bar-dev *ngSwitchCase="'dev'"></helper-bar-dev>
+      <helper-bar-wo *ngSwitchCase="'wo'"></helper-bar-wo>
+    </ng-container>
+    <i class="close" nz-icon nzType="close-circle" (click)="type = null"></i>
+  </div>
+  <div class="flex-center-between">
+    <div class="doc">
+      <a (click)="type = 'support'" [class.active]="type === 'support'"><span>售后服务</span></a>
+      <a (click)="type = 'refer'" [class.active]="type === 'refer'"><span>公司简介</span></a>
+      <a (click)="type = 'ftp'" [class.active]="type === 'ftp'"><span>产品中心</span></a>
+      <a (click)="type = 'dev'" [class.active]="type === 'dev'"><span>产品优势</span></a>
+    </div>
+    <div class="quick">
+      <a href="/" nz-tooltip nzTooltipTitle="在线客服" class="online">
+        <i nz-icon nzType="customer-service"></i>
+      </a>
+      <a (click)="type = 'wo'" nz-tooltip nzTooltipTitle="工单支持" class="wo" [class.active]="type === 'wo'">
+        <i nz-icon nzType="profile"></i>
+      </a>
+      <a href="mailto:cipchk@qq.com" target="_blank" nz-tooltip nzTooltipTitle="提需求提建议" class="feedback">
+        <i nz-icon nzType="reconciliation"></i>
+      </a>
+      <a href="https://weibo.com" target="_blank" class="weibo">
+        <i nz-icon nzType="weibo"></i>
+      </a>
+      <a href="https://github.com" target="_blank" class="github">
+        <i nz-icon nzType="github"></i>
+      </a>
+      <a langs></a>
+    </div>
+  </div>
+</div>

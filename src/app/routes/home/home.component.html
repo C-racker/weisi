@@ -1,0 +1,39 @@
+<page>
+  <nz-skeleton *ngIf="!i"></nz-skeleton>
+  <div *ngIf="i" class="d-flex justify-content-between">
+    <div style="width: 1000px; height: 400px; margin: 0 auto;">
+      <nz-carousel nzEffect nzAutoPlay>
+        <div nz-carousel-content *ngFor="let item of array">
+          <img src="{{item.src}}" alt="">
+        </div>
+      </nz-carousel>
+    </div>
+  </div>
+  <div *ngFor="let p of products" class="product-category">
+    <h2>{{ p.name }}</h2>
+    <ul nz-row nzGutter="32" class="product-list">
+      <li nz-col nzSpan="6" *ngFor="let i of p.products">
+        <div class="product-item">
+          <i nz-icon></i>
+          <strong class="name">{{ i.name }}</strong>
+          <ellipsis class="desc" lines="4">{{ i.description }}</ellipsis>
+          <div class="btn">
+            <button nz-button nzType="primary"> <a routerLink="/{{i.url}}" linkActive="/{{i.url}}">
+                <!-- {{ 'yun.topbar.purge' | i18n }} -->
+                {{i.url}}
+              </a></button>
+          </div>
+
+        </div>
+      </li>
+    </ul>
+  </div>
+</page>
+<helper-bar></helper-bar>
+
+<div #distannce1 style="position: absolute; top: 0; right: 0;"></div>
+<button
+  style="position: fixed; top: 400px; right: 200px; width: 26px; height: 100px; background-color: skyblue; border-radius: 5px;"
+  (click)="goDistance()">
+  回到顶部
+</button>

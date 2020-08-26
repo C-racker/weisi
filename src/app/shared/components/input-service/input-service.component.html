@@ -1,0 +1,16 @@
+<nz-select
+  [(ngModel)]="value"
+  (ngModelChange)="valueChange($event)"
+  nzPlaceHolder="输入服务或加速域名"
+  [nzAllowClear]="allowClear"
+  nzShowSearch
+  nzServerSearch
+  (nzOnSearch)="onSearch($event)"
+  style="min-width: 100px;"
+  [nzDisabled]="disabled"
+>
+  <nz-option *ngIf="loading" nzDisabled nzCustomContent> <i nz-icon nzType="loading"></i> 搜索中... </nz-option>
+  <ng-container *ngIf="!loading">
+    <nz-option *ngFor="let o of list" [nzLabel]="o.name" [nzValue]="o.name"></nz-option>
+  </ng-container>
+</nz-select>

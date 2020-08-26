@@ -1,0 +1,97 @@
+<div class="box">
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <h1 class="tit">{{ 'passport.login.forget' | i18n }}</h1>
+  <form
+    *ngIf="showType === 'no'"
+    nz-form
+    #nof="ngForm"
+    nzLayout="vertical"
+    [formGroup]="noForm"
+    (ngSubmit)="getCode()"
+    role="form"
+    class="form"
+  >
+    <div se-container nzLayout="vertical">
+      <se>
+        <nz-radio-group formControlName="type">
+          <label nz-radio nzValue="mobile">{{ 'passport.login.forget.by-mobile' | i18n }}</label>
+          <label nz-radio nzValue="email">{{ 'passport.login.forget.by-email' | i18n }}</label>
+        </nz-radio-group>
+      </se>
+      <se
+        [error]="{
+          mobile: 'passport.forget.validation.mobile' | i18n,
+          email: 'passport.forget.validation.email' | i18n
+        }"
+      >
+        <input formControlName="no" nz-input nzSize="large" autocomplete="off" />
+      </se>
+      <button
+        nz-button
+        nzType="primary"
+        nzSize="large"
+        nzBlock
+        type="submit"
+        [disabled]="nof.invalid"
+        [nzLoading]="http.loading"
+      >
+        {{ 'passport.forget.get.vcode' | i18n }}
+      </button>
+    </div>
+    <div class="my-lg d-flex justify-content-between">
+      <div [innerHTML]="'passport.forget.tip' | i18n"></div>
+      <a routerLink="/passport/login">{{ 'passport.forget.login' | i18n }}</a>
+    </div>
+  </form>
+  <form
+    *ngIf="showType === 'change'"
+    nz-form
+    #pwdf="ngForm"
+    nzLayout="vertical"
+    [formGroup]="pwdForm"
+    (ngSubmit)="changePwd()"
+    role="form"
+    class="form"
+  >
+    <div se-container nzLayout="vertical">
+      <se error="请输入您获取的验证码">
+        <input nz-input nzSize="large" autocomplete="off" formControlName="vcode" placeholder="请输入验证码" />
+      </se>
+      <se error="密码支持 8 - 20 位的字母、数字和英文符号">
+        <input
+          nz-input
+          type="password"
+          nzSize="large"
+          autocomplete="off"
+          formControlName="password"
+          placeholder="设置 8 - 20 位的新密码"
+        />
+      </se>
+      <se error="请确认新密码">
+        <input
+          nz-input
+          type="password"
+          nzSize="large"
+          autocomplete="off"
+          formControlName="repassword"
+          placeholder="确认新密码"
+        />
+      </se>
+      <button
+        nz-button
+        nzType="primary"
+        nzSize="large"
+        nzBlock
+        type="submit"
+        [disabled]="pwdf.invalid"
+        [nzLoading]="http.loading"
+      >
+        重置密码
+      </button>
+    </div>
+    <div class="my-lg d-flex justify-content-between">
+      <div [innerHTML]="'passport.forget.tip' | i18n"></div>
+      <a routerLink="/passport/login">{{ 'passport.forget.login' | i18n }}</a>
+    </div>
+  </form>
+</div>

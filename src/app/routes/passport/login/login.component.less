@@ -1,0 +1,24 @@
+@import '../../../../styles/theme.less';
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 990px;
+  margin: 0 auto;
+  padding-top: 128px;
+
+  ::ng-deep {
+    .banner,
+    h1 {
+      color: #fff;
+    }
+
+    .box {
+      width: 100%;
+      max-width: 380px;
+      margin: 0;
+      padding: 24px;
+    }
+  }
+}

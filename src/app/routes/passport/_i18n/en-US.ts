@@ -1,0 +1,15 @@
+export default {
+  'passport.login.name': 'User Name',
+  'passport.login.pwd': 'Password',
+  'passport.login.btn': 'Login',
+  'passport.login.forget': 'Forgot your password',
+  'passport.login.register': 'Free Register',
+  'passport.login.forget.by-mobile': `Mobile`,
+  'passport.login.forget.by-email': `E-mail`,
+  'passport.forget.validation.mobile': `The mobile address is in the wrong format!`,
+  'passport.forget.validation.email': `The email address is in the wrong format!`,
+  'passport.forget.get.vcode': `Get Code`,
+  'passport.forget.tip': `Can't retrieve your password via <a href="/">contact customer service</a>.`,
+  'passport.forget.login': 'Login',
+  'passport.register.choose': 'Choose account type',
+};

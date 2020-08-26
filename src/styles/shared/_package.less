@@ -1,0 +1,106 @@
+.package {
+  position: relative;
+  margin: 0 20px 20px 0;
+  padding: 20px;
+  background-color: @package-bg;
+  border: 1px solid @border-color-split;
+  border-radius: 2px;
+  cursor: pointer;
+  .price {
+    font-size: 32px;
+    &::before {
+      padding-right: 2px;
+      font-size: 12px;
+      content: '¥';
+    }
+  }
+  &-size {
+    padding: 4px 0;
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 1px solid @border-color-split;
+  }
+  &-money {
+    display: flex;
+    padding-top: 24px;
+    &-discount {
+      width: 50%;
+      padding-right: 8px;
+      color: @brand-color;
+      text-align: right;
+    }
+    &-org {
+      > span {
+        display: block;
+        padding-left: 8px;
+        color: #747474;
+        text-decoration: line-through;
+      }
+      > em {
+        padding: 2px 5px;
+        color: #fff;
+        font-size: 12px;
+        font-style: normal;
+        background-color: @brand-color;
+        border-radius: 2px;
+      }
+    }
+  }
+  // 特惠
+  &-hot {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 36px;
+    height: 28px;
+    padding-top: 2px;
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+    background-color: #e02915;
+    > span {
+      position: absolute;
+      bottom: 8px;
+      left: 0;
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-right: 18px solid transparent;
+        border-bottom: 8px solid @package-bg;
+        border-left: 18px solid transparent;
+        content: '';
+      }
+    }
+  }
+  &-check {
+    position: absolute;
+    top: 0;
+    right: 0;
+    &::before {
+      position: absolute;
+      top: -5px;
+      left: -32px;
+      border-right: 24px solid transparent;
+      border-bottom: 24px solid @brand-color;
+      border-left: 24px solid transparent;
+      transform: rotate(45deg);
+      content: '';
+    }
+    > .anticon {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      color: #fff;
+    }
+  }
+  &-selected {
+    background-color: @package-selected-bg;
+    border: 1px solid @brand-color;
+    .package-th > span {
+      &::before {
+        border-bottom-color: #fff;
+      }
+    }
+  }
+}

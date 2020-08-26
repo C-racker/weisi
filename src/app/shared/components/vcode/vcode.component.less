@@ -1,0 +1,53 @@
+@import '../../../../styles/theme.less';
+
+:host {
+  display: flex;
+  ::ng-deep {
+    .vcode {
+      &-btn {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 8px;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        .@{ant-prefix}-btn {
+          height: inherit;
+          padding: 3px 8px 2px;
+          font-weight: 400;
+          font-size: 13px;
+        }
+      }
+      &-ipt {
+        width: 105px;
+      }
+    }
+  }
+
+  @media (max-width: @mobile-max) {
+    display: block;
+    ::ng-deep {
+      .vcode {
+        &-btn {
+          position: relative;
+          width: 100%;
+          .@{ant-prefix}-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            border: none;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+        }
+        &-ipt {
+          width: 100%;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}

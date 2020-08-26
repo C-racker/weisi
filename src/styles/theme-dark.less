@@ -1,0 +1,21 @@
+@import './theme-default.less';
+
+// shared/package
+// ==
+@package-bg: #121212;
+@package-selected-bg: #121212;
+
+// fix/helper-bar
+// ==
+@helper-bar-shadow: 0 -2px 10px rgba(0, 0, 0, 0.8);
+@helper-bar-focus-bg: fade(@black, 50%);
+
+// fix/quick-help
+// ==
+@quick-help-body-bg: lighten(@component-background, 5%);
+
+// editor quill
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+  border-color: @border-color-split;
+}

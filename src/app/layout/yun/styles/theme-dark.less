@@ -1,0 +1,31 @@
+@import '~@delon/theme/theme-dark.less';
+@import './theme-default.less';
+
+@brand-hover-color: color(~`colorPalette('@{brand-color}', 7) `);
+@link-color: @brand-color;
+@link-hover-color: @brand-hover-color;
+
+@alain-yun-body-bg: #ecedf1;
+@alain-yun-body-color: @text-color;
+
+// Topbar
+@alain-yun-topbar-bg: @component-background;
+@alain-yun-topbar-btn-color: @text-color;
+@alain-yun-topbar-btn-hover-color: lighten(@alain-yun-topbar-bg, 5%);
+@alain-yun-topbar-dd-item-hover-color: lighten(@alain-yun-topbar-bg, 10%);
+
+// Page
+@alain-yun-page-bg: @component-background;
+@alain-yun-page-backbar-color: #aeaeae;
+@alain-yun-page-backbar-shadow: 0 -5px 5px rgba(0, 0, 0, 0.48);
+@alain-yun-page-active-color: @brand-color;
+@alain-yun-page-nav-border-bottom: 1px solid @border-color-base;
+@alain-yun-page-shadow: 12px 12px 2px 1px rgba(21, 21, 21, 0.45);
+@alain-yun-page-tit-color: @text-color;
+
+// Page form
+@alain-yun-pageform-tit-color: @text-color;
+
+// Help
+@help-well-bg: lighten(@component-background, 5%);
+@help-circle-color: #464646;
