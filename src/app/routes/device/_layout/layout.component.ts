@@ -10,6 +10,7 @@ import { ElementRef, ViewChild } from '@angular/core';
 })
 export class DeviceLayoutComponent implements OnInit {
   @ViewChild('distannce1') distannce1: ElementRef;
+  isA = false;
   goDistance(): void {
     this.distannce1.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
   }

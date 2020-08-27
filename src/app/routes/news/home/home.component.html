@@ -20,7 +20,14 @@
   <div class="right">
     <div class="content">
       <p style="font-size: 24px;border-bottom: 1px solid #ccc;">新闻中心</p>
-
+      <ul>
+        <li *ngFor="let value of this.dataSetList">>>>{{value.desc}}<span>{{this.time}}</span>
+        </li>
+      </ul>
+      <nz-pagination [nzPageIndex]="1" [nzTotal]="[this.pageCount]" [nzPageSize]="[this.pageSize]"
+        (nzPageIndexChange)="changePage($event)"
+        style=" width: 400px; height: 70px; margin: 0 auto; line-height: 70px;">
+      </nz-pagination>
     </div>
   </div>
 </div>

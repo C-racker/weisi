@@ -33,27 +33,27 @@
         <img style="width: 30%;" src="{{ item.src }}" alt="设备" />
         <div class="desc">
           <p style="font-size: 18px;">{{ item.name }}</p>
-          <span
-            >{{ item.desc }}
-            <a href=""
-              ><a routerLink="/device" routerLinkActive="active" [queryParams]="{ id: item.id, list: 1 }" (click)="handleShow()"
-                >更多...</a
-              ></a
-            >
+          <span>{{ item.desc }}
+            <a href=""><a routerLink="/device" routerLinkActive="active" [queryParams]="{ id: item.id, list: 1 }"
+                (click)="handleShow()">更多...</a></a>
           </span>
         </div>
       </div>
     </div>
-    <div class="content">
+    <div class="content" *ngIf="isView">
       <p style="font-size: 24px; border-bottom: 1px solid #ccc;">电寿命试验</p>
       <div class="message" *ngFor="let items of this.list">
         <img style="width: 30%;" src="{{ items.src }}" alt="设备" />
         <div class="desc">
           <p style="font-size: 18px;">{{ items.name }}</p>
-          <span>{{ items.desc }} <a href="">更多...</a> </span>
+          <span>{{ items.desc }} <a [routerLink]="[ '/path' ]" [queryParams]="{count: items.id}"
+              (click)="handleDetail()">更多...</a></span>
         </div>
       </div>
       <!-- {{this.id}} -->
+    </div>
+    <div *ngIf="show">
+      11111
     </div>
   </div>
   <!-- 每个内容都有自己的id值 , 当设备分类的id等于之前的id  显示相应的内容 -->

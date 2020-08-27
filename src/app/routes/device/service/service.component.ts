@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'device-service',
@@ -365,11 +365,12 @@ export class ServiceComponent implements OnInit {
 
   list: any = this.dev[0].list;
   // content: any = 1;
-  id: any;
+  id: any = 1;
   show = false;
   code: any;
   detaillist: any;
-
+  // 是否展示详情页
+  isView = false;
   constructor(public router: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -381,6 +382,7 @@ export class ServiceComponent implements OnInit {
   }
   handleShow() {
     this.show = true;
+    this.isView = true;
   }
   handleActive() {
     // this.id = this.router.queryParams._value.id;
@@ -393,5 +395,9 @@ export class ServiceComponent implements OnInit {
     this.show = false;
     this.detaillist = this.devices[this.id - 1].dev[this.id - 1].list;
     console.log(this.detaillist[0].name);
+  }
+  handleDetail() {
+    this.show = true;
+    this.isView = false;
   }
 }

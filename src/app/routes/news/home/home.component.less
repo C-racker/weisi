@@ -21,31 +21,13 @@
       text-align: center;
     }
 
-    li {
-      width: 200px;
-      height: 30px;
-      margin-bottom: 3px;
-      line-height: 30px;
-      text-align: center;
-      background: linear-gradient(#fff, rgb(239, 239, 239));
-      cursor: pointer;
-    }
+
 
     .active {
       color: #000;
-      background: rgb(78, 121, 165);
     }
 
-    .tel {
-      display: flex;
-      flex-direction: column;
-      width: 200px;
-      margin-left: 20px;
 
-      p {
-        padding: -10px 0;
-      }
-    }
   }
 
   .line {
@@ -58,7 +40,22 @@
     height: 100%;
 
     // background-color: skyblue;
+    ul {
+      position: relative;
+      height: 500px;
+      margin: 0 auto;
+      margin-top: 20px;
 
+      li {
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+
+        span {
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
   }
 
 }

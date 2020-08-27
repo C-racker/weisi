@@ -16,29 +16,6 @@ const alainConfig: AlainConfig = {
     shortcuts: {
       enabled: true,
       closed: false,
-      list: [
-        { text: '近3小时', fn: () => [addHours(new Date(), -3), new Date()] },
-        {
-          text: '今天',
-          fn: () => getTimeDistance('today'),
-        },
-        {
-          text: '昨天',
-          fn: () => getTimeDistance('yesterday'),
-        },
-        {
-          text: '近3天',
-          fn: () => getTimeDistance(-2),
-        },
-        {
-          text: '近7天',
-          fn: () => getTimeDistance(-6),
-        },
-        {
-          text: '本月',
-          fn: () => getTimeDistance('month'),
-        },
-      ],
     },
   },
   pageHeader: { homeI18n: 'home' },

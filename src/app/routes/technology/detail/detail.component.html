@@ -3,7 +3,11 @@
     <h3>技术支持
     </h3>
     <ul style=" margin-bottom: 60px;margin-left: -20px;">
-      <li *ngFor="let item of tech">{{item}}</li>
+      <li *ngFor="let item of this.tech" (click)="changeTech(item.id)">
+        <a [routerLink]="[ '/technology' ]" [queryParams]="{id: item.id}" routerLinkActive="active">
+          {{item.desc}}
+        </a>
+      </li>
 
     </ul>
     <h3>联系我们
@@ -21,9 +25,34 @@
   <div class=" line">
   </div>
   <div class="right">
-    <div class="content">
-      <p style="font-size: 24px;border-bottom: 1px solid #ccc;">技术标准</p>
+    <div class="content" style="height: 100%;">
+      <p style=" font-size: 24px;border-bottom: 1px solid #ccc;">
+        {{this.name}}</p>
+      <div *ngIf="isView">
+        <ul>
+          <li *ngFor="let value of this.dataSetList">>>> <a [routerLink]="[ '/technology' ]" routerLinkActive="active"
+              style="color: #747474;" [queryParams]="{page:value.id}"
+              (click)="handlePage(value.id)">{{ value.desc }}</a>
+            <span>{{this.time}}</span></li>
+        </ul>
+        <div>
+          <nz-pagination [nzPageIndex]="1" [nzTotal]="[this.pages]" [nzPageSize]="[this.pageSize]"
+            (nzPageIndexChange)="changePage($event)"
+            style=" width: 360px; height: 70px; margin: 0 auto;line-height: 70px;">
 
+          </nz-pagination>
+
+        </div>
+      </div>
+      <!-- 详情页 -->
+      <div class="detailPage" *ngIf="!isView">
+        <h2 class="pageTitle" style="text-align: center;">解读新版成套装置标准 GB 7251</h2>
+        <p class="article">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GB 7251的2013版已经发布了三年，标准名称为：《低压成套开关设备和控制设备
+          第一部分：总则》，也是目前最新标准。由于GB
+          7251对低压成套开关设备的制造和使用具有非常重要的意义， 因此维思自动化在此将GB 7251.1-2013《低压成套开关设备和控制设备 第1部分：总则》与GB 7251.1-2005《低压成套开关设备和控制设备
+          第1部分：型式试验和部分型式试验成套设备》进行了详细地对比总结，以便更清楚地了解GB 7251新标准作了哪些修改和变更。</p>
+        <span>发布时间: {{this.time}}</span>
+      </div>
     </div>
   </div>
 </div>

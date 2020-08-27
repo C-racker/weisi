@@ -1,7 +1,7 @@
 import { Inject, NgModule } from '@angular/core';
 import { SharedModule } from '@shared';
 
-import { TechnologyDetailComponent } from './detail/derail.component';
+import { TechnologyDetailComponent } from './detail/detail.component';
 import { TechnologyRoutingModule } from './technology-routing.module';
 import { TechnologyLayoutComponent } from './_layout/layout.component';
 

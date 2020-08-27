@@ -33,7 +33,6 @@
 
     .active {
       color: #000;
-      background: rgb(78, 121, 165);
     }
 
     .tel {
@@ -58,7 +57,22 @@
     height: 100%;
 
     // background-color: skyblue;
+    ul {
+      position: relative;
+      height: 500px;
+      margin: 0 auto;
+      margin-top: 20px;
 
+      li {
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+
+        span {
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
   }
 
 }

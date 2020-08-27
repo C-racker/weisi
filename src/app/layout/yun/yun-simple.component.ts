@@ -35,13 +35,6 @@ export class YunLayoutSimpleComponent implements OnInit, OnDestroy {
     this.fixI18n(this._optinos.leftNavs);
     this.fixI18n(this._optinos.right.navs);
   }
-  get optinos() {
-    return this._optinos;
-  }
-
-  get name() {
-    return this.userSrv.name;
-  }
 
   private get body(): HTMLBodyElement {
     return this.doc.body;
@@ -100,11 +93,6 @@ export class YunLayoutSimpleComponent implements OnInit, OnDestroy {
     } else {
       this.router.navigateByUrl(i.router);
     }
-  }
-
-  logout() {
-    this.userSrv.logout();
-    this.router.navigateByUrl(this.userSrv.login_url);
   }
 
   ngOnInit() {
